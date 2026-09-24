@@ -2,12 +2,12 @@
 
 # 🛰️ SentryGrid
 
-[![CI](https://github.com/darkstardevx/sentrygrid/actions/workflows/ci.yml/badge.svg)](https://github.com/darkstardevx/sentrygrid/actions/workflows/ci.yml)
-[![Release](https://github.com/darkstardevx/sentrygrid/actions/workflows/release.yml/badge.svg)](https://github.com/darkstardevx/sentrygrid/actions/workflows/release.yml)
+[![CI](https://github.com/cybercore-tech/sentrygrid/actions/workflows/ci.yml/badge.svg)](https://github.com/cybercore-tech/sentrygrid/actions/workflows/ci.yml)
+[![Release](https://github.com/cybercore-tech/sentrygrid/actions/workflows/release.yml/badge.svg)](https://github.com/cybercore-tech/sentrygrid/actions/workflows/release.yml)
 
 `Rust` · `ufw` · `nftables`-adjacent · `docker`
 
-**[darkstardevx.github.io/sentrygrid](https://darkstardevx.github.io/sentrygrid/)**
+**[cybercore-tech.github.io/sentrygrid](https://cybercore-tech.github.io/sentrygrid/)**
 
 **Network exposure auditor.** Answers the one question `ss`, `ufw status`,
 and `docker ps` each only partially answer on their own: **is this port
@@ -16,7 +16,7 @@ actually reachable, and by what mechanism?**
 ## 📦 Install
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/darkstardevx/sentrygrid/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/cybercore-tech/sentrygrid/main/install.sh | sh
 ```
 
 Downloads the latest release for Linux (x86_64 or aarch64), verifies its

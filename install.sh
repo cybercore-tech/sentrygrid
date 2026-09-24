@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # Install SentryGrid from the latest GitHub release.
 #
-#   curl -fsSL https://raw.githubusercontent.com/darkstardevx/sentrygrid/main/install.sh | sh
+#   curl -fsSL https://raw.githubusercontent.com/cybercore-tech/sentrygrid/main/install.sh | sh
 #
 # Supported: Linux (x86_64, aarch64) only -- SentryGrid shells out to
 # `ss` and `ufw`, both Linux-specific, so there's no macOS build.
 set -eu
 
-REPO="darkstardevx/sentrygrid"
+REPO="cybercore-tech/sentrygrid"
 INSTALL_DIR="${SENTRYGRID_INSTALL_DIR:-$HOME/.local/bin}"
 
 die() {
