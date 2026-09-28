@@ -75,6 +75,31 @@ fn main() -> ExitCode {
                 | audit::Severity::ExposedDocker
         )
     });
+
+    let sentry_status = cybercore::status::ToolStatus {
+        schema_version: 1,
+        tool: "sentrygrid".to_string(),
+        version: "0.1.0".to_string(),
+        host: hostname::get().map(|h| h.to_string_lossy().into_owned()).unwrap_or_else(|_| "localhost".to_string()),
+        updated_at: chrono::Utc::now().to_rfc3339(),
+        health: if any_exposed { cybercore::status::Health::Warning } else { cybercore::status::Health::Ok },
+        summary: format!("Network exposure audit complete: {} findings (exposed: {})", findings.len(), any_exposed),
+        metrics: vec![
+            cybercore::status::Metric {
+                label: "Total Findings".to_string(),
+                value: findings.len().to_string(),
+                unit: None,
+            },
+        ],
+        events: vec![],
+        actions: vec![
+            cybercore::status::Action {
+                label: "Run SentryGrid Audit".to_string(),
+                argv: vec!["sentrygrid".to_string()],
+            },
+        ],
+    };
+    let _ = cybercore::status::write(&sentry_status);
     if args.fail_on_exposed && any_exposed {
         ExitCode::FAILURE
     } else {
